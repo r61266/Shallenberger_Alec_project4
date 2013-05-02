@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		getCheckboxValue();
 		var item			= {};
 			item.holigroup	= ["Holiday:", $('holiday').value];
-			item.app		= ["Appitzer:", $('app').value];
+			item.app		= ["Appitizer:", $('app').value];
 			item.mname		= ["Main Meal:", $('mname').value];	
 			item.side		= ["Sides Dishes:", sideValue];
 			item.date		= ["Date:", $('date').value];
@@ -81,7 +81,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
-			alert("There is no data in Local Storage.");
+			alert("There is no data in Local Storage so default data was added.");
+			autoFillData();
 		}
 		
 		var makeDiv = document.createElement('div');
@@ -99,6 +100,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeli.appendChild(makeSubList);
+			getImage(obj.holigroup[1], makeSubList);
 			for(var k in obj){
 				var makeSubli = document.createElement('li');
 				makeSubList.appendChild(makeSubli);
@@ -107,6 +109,21 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(linksLi);
 			}
 			makeItemLinks(localStorage.key(i), linksLi);
+		}
+	}
+	
+	function getImage(holiName, makeSubList){
+		var imgLi = document.createElement('li');
+		makeSubList.appendChild(imgLi);
+		var newImage = document.createElement('img');
+		var setSrc = newImage.setAttribute("src", "Images/"+ holiName + ".png");
+		imgLi.appendChild(newImage);	
+	}
+	
+	function autoFillData(){
+		for(var k in json){
+			var id	= Math.floor(Math.random()*14685325);
+			localStorage.setItem(id, JSON.stringify(json[k]));
 		}
 	}
 	
