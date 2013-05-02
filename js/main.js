@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-				
+		
 	function toggleControls(n){
 		switch(n){
 			case "on":
