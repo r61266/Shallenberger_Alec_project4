@@ -1,0 +1,48 @@
+/* CSS Document */
+/* Alec Shallenberger */
+/* May 1, 2013 */
+/* Term 1304 */
+/* VFW_Project4 */
+
+body {
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(142,142,142,1) 100%); /* Chrome10+,Safari5.1+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#8e8e8e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+h1 {
+	font-style: italic;
+	color: white; 
+	outline: 1px dotted white;
+	padding: 8px;
+	width: 50%;
+	font-weight: bold;
+}
+
+p {
+	color: white;
+	font-family: Arial;
+	font-style: italic;
+	font-size: 30px;
+	text-align: center; 
+	line-height: 1.4em;
+}
+
+label {
+	color: white;
+	display: inline;
+	font-family: Arial;
+	font-size: 15px;
+}
+
+legend {
+	font-weight: bold;
+	color: black; 
+	font-size: 15px;
+	border: 1.5px dashed gray;
+}
+
+li {
+	color: white;
+	font-family: sans-serif;
+	font-style: italic;
+}
